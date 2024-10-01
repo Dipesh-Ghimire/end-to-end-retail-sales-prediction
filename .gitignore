@@ -6,7 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
-artifacts/
+#artifacts folder contain
+.artifact
+artifact/
 # Distribution / packaging
 .Python
 build/
