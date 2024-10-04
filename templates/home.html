@@ -5,183 +5,190 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retail Sales Prediction</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
     <div class="login">
         <h1>Retail Sales Prediction System</h1>
         <form action="{{ url_for('predict_datapoint')}}" method="post">
-            <div class="mb-3">
-                <label class="form-label">Item Type</label>
-                <select class="form-control" name="item_type" required>
-                    <option class="placeholder" selected disabled value="">Select Item Type</option>
-                    <option value="Household">
-                        Household
-                    </option>
-                    <option value="Dairy">
-                        Dairy
-                    </option>
-                    <option value="Soft Drinks">
-                        Soft Drinks
-                    </option>
-                    <option value="Meat">
-                        Meat
-                    </option>
-                    <option value="Fruits and Vegetables">
-                        Fruits and Vegetables
-                    </option>
-                    <option value="Baking Goods">
-                        Baking Goods
-                    </option>
-                    <option value="Snack Foods">
-                        Snack Foods
-                    </option>
-                    <option value="Frozen Foods">
-                        Frozen Foods
-                    </option>
-                    <option value="Breakfast">
-                        Breakfast
-                    </option>
-                    <option value="Health and Hygiene">
-                        Health and Hygiene
-                    </option>
-                    <option value="Hard Drinks">
-                        Hard Drinks
-                    </option>
-                    <option value="Canned">
-                        Canned
-                    </option>
-                    <option value="Breads">
-                        Breads
-                    </option>
-                    <option value="Starchy Foods">
-                        Starchy Foods
-                    </option>
-                    <option value="Seafood">
-                        Seafood
-                    </option>
-                    <option value="Others">
-                        Others
-                    </option>
+            <div class="form-container">
+                <div class="column">
+                    <div class="mb-3">
+                        <label class="form-label">Item Type</label>
+                        <select class="form-control" name="item_type" required>
+                            <option class="placeholder" selected disabled value="">Select Item Type</option>
+                            <option value="Household">
+                                Household
+                            </option>
+                            <option value="Dairy">
+                                Dairy
+                            </option>
+                            <option value="Soft Drinks">
+                                Soft Drinks
+                            </option>
+                            <option value="Meat">
+                                Meat
+                            </option>
+                            <option value="Fruits and Vegetables">
+                                Fruits and Vegetables
+                            </option>
+                            <option value="Baking Goods">
+                                Baking Goods
+                            </option>
+                            <option value="Snack Foods">
+                                Snack Foods
+                            </option>
+                            <option value="Frozen Foods">
+                                Frozen Foods
+                            </option>
+                            <option value="Breakfast">
+                                Breakfast
+                            </option>
+                            <option value="Health and Hygiene">
+                                Health and Hygiene
+                            </option>
+                            <option value="Hard Drinks">
+                                Hard Drinks
+                            </option>
+                            <option value="Canned">
+                                Canned
+                            </option>
+                            <option value="Breads">
+                                Breads
+                            </option>
+                            <option value="Starchy Foods">
+                                Starchy Foods
+                            </option>
+                            <option value="Seafood">
+                                Seafood
+                            </option>
+                            <option value="Others">
+                                Others
+                            </option>
 
-                </select>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Item Fat Content</label>
+                        <select class="form-control" name="item_fat_content" required>
+                            <option class="placeholder" selected disabled value="">Select Item Fat Content</option>
+                            <option value="Low Fat">
+                                Low Fat
+                            </option>
+                            <option value="Regular">
+                                Regular
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Item Weight</label>
+                        <input class="form-control" type="number" step="0.01" name="item_weight" min="1" max="100"
+                            placeholder="Enter item_weight" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Item Visibility</label>
+                        <input class="form-control" type="number" step="0.001" name="item_visibility" min="0.000"
+                            max="0.5" placeholder="Enter Item Visibility" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Item MRP</label>
+                        <input class="form-control" type="number" step="0.01" name="item_mrp"
+                            placeholder="Enter Item MRP" min="1" />
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="mb-3">
+                        <label class="form-label">Outlet Identifier</label>
+                        <select class="form-control" name="outlet_identifier" required>
+                            <option class="placeholder" selected disabled value="">Select Outlet Identifier</option>
+                            <option value="OUT035">
+                                OUT035
+                            </option>
+                            <option value="OUT049">
+                                OUT049
+                            </option>
+                            <option value="OUT018">
+                                OUT018
+                            </option>
+                            <option value="OUT010">
+                                OUT010
+                            </option>
+                            <option value="OUT013">
+                                OUT013
+                            </option>
+                            <option value="OUT027">
+                                OUT027
+                            </option>
+                            <option value="OUT045">
+                                OUT045
+                            </option>
+                            <option value="OUT017">
+                                OUT017
+                            </option>
+                            <option value="OUT046">
+                                OUT046
+                            </option>
+                            <option value="OUT019">
+                                OUT019
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Outlet Size</label>
+                        <select class="form-control" name="outlet_size" required>
+                            <option class='placeholder' selected disabled>Select Outlet Size</option>
+                            <option value="High">
+                                High
+                            </option>
+                            <option value="Medium">
+                                Medium
+                            </option>
+                            <option value="Small">
+                                Small
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Outlet Type</label>
+                        <select class="form-control" name="outlet_type" required>
+                            <option class="placeholder" selected disabled value="">Select Outlet Type</option>
+                            <option value="Supermarket Type1">
+                                Supermarket Type1
+                            </option>
+                            <option value="Supermarket Type2">
+                                Supermarket Type2
+                            </option>
+                            <option value="Supermarket Type3">
+                                Supermarket Type3
+                            </option>
+                            <option value="Grocery Store">
+                                Grocery Store
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Outlet Location Type</label>
+                        <select class="form-control" name="outlet_location_type" required>
+                            <option class='placeholder' selected disabled>Select Outlet Location Type</option>
+                            <option value="Tier 1">
+                                Tier 1
+                            </option>
+                            <option value="Tier 2">
+                                Tier 2
+                            </option>
+                            <option value="Tier 3">
+                                Tier 3
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Outlet Establishment Year</label>
+                        <input class="form-control" type="number" name="outlet_establishment_year" value="2024"
+                            min="1900" max="2099" step="1" placeholder="Enter year" />
+                    </div>
+                </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Item Fat Content</label>
-                <select class="form-control" name="item_fat_content" required>
-                    <option class="placeholder" selected disabled value="">Select Item Fat Content</option>
-                    <option value="Low Fat">
-                        Low Fat
-                    </option>
-                    <option value="Regular">
-                        Regular
-                    </option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Item Weight</label>
-                <input class="form-control" type="number" step="0.01" name="item_weight"
-                    placeholder="Enter item_weight" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Item Visibility</label>
-                <input class="form-control" type="number" step="0.001" name="item_visibility"
-                    placeholder="Enter Item Visibility" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Item MRP</label>
-                <input class="form-control" type="number" step="0.01" name="item_mrp" placeholder="Enter Item MRP" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Outlet Identifier</label>
-                <select class="form-control" name="outlet_identifier" required>
-                    <option class="placeholder" selected disabled value="">Select outlet_identifier</option>
-                    <option value="OUT035">
-                        OUT035
-                    </option>
-                    <option value="OUT049">
-                        OUT049
-                    </option>
-                    <option value="OUT018">
-                        OUT018
-                    </option>
-                    <option value="OUT010">
-                        OUT010
-                    </option>
-                    <option value="OUT013">
-                        OUT013
-                    </option>
-                    <option value="OUT027">
-                        OUT027
-                    </option>
-                    <option value="OUT045">
-                        OUT045
-                    </option>
-                    <option value="OUT017">
-                        OUT017
-                    </option>
-                    <option value="OUT046">
-                        OUT046
-                    </option>
-                    <option value="OUT019">
-                        OUT019
-                    </option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Outlet Size</label>
-                <select class="form-control" name="outlet_size" required>
-                    <option class='placeholder' selected disabled>Select outlet_size</option>
-                    <option value="High">
-                        High
-                    </option>
-                    <option value="Medium">
-                        Medium
-                    </option>
-                    <option value="Small">
-                        Small
-                    </option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Outlet Type</label>
-                <select class="form-control" name="outlet_type" required>
-                    <option class="placeholder" selected disabled value="">Select Outlet Type</option>
-                    <option value="Supermarket Type1">
-                        Supermarket Type1
-                    </option>
-                    <option value="Supermarket Type2">
-                        Supermarket Type2
-                    </option>
-                    <option value="Supermarket Type3">
-                        Supermarket Type3
-                    </option>
-                    <option value="Grocery Store">
-                        Grocery Store
-                    </option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Outlet Location Type</label>
-                <select class="form-control" name="outlet_location_type" required>
-                    <option class='placeholder' selected disabled>Select Outlet Location Type</option>
-                    <option value="Tier 1">
-                        Tier 1
-                    </option>
-                    <option value="Tier 2">
-                        Tier 2
-                    </option>
-                    <option value="Tier 3">
-                        Tier 3
-                    </option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Outlet Establishment Year</label>
-                <input class="form-control" type="number" name="outlet_establishment_year" value="2024" min="1900"
-                    max="2099" step="1" placeholder="Enter year" />
-            </div>
-
             <div class="mb-3">
                 <input class="btn btn-primary" type="submit" value="Predict Outlet Sales" required />
             </div>
@@ -190,6 +197,6 @@
             Sales Prediction is {{result}}
         </h2>
 
-    </body>
+</body>
 
 </html>
