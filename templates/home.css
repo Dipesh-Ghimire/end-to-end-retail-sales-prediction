@@ -54,7 +54,7 @@ input[type="number"]:focus, select:focus {
 input[type="submit"] {
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background-color: #1a73e8;
     color: white;
     border: none;
     border-radius: 5px;
@@ -64,7 +64,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #1668c1;
 }
 
 /* Placeholder styling */
@@ -93,4 +93,11 @@ input[type="submit"]:hover {
 /* Styling each column */
 .column {
     width: 48%;  /* Adjust column width to fit within the container */
+}
+body {
+    background-image: url('background.jpg');
+    background-size: cover;    /* Ensures the image covers the entire background */
+    background-position: center;
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
 }
