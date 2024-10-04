@@ -1,0 +1,96 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.login {
+    background-color: #fff;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form label styling */
+.form-label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Form field styling */
+input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #007bff;
+}
+
+/* Button styling */
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Placeholder styling */
+.placeholder {
+    color: #999;
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+    .login {
+        padding: 20px;
+    }
+
+    input[type="submit"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Flexbox layout for two columns */
+.form-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Styling each column */
+.column {
+    width: 48%;  /* Adjust column width to fit within the container */
+}
