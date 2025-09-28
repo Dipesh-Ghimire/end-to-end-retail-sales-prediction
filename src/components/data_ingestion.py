@@ -6,12 +6,13 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
 
 @dataclass
 class DataIngestionConfig:
-    train_data_path : str = os.path.join('artifact','train.csv')
-    test_data_path : str = os.path.join('artifact','test.csv')
-    raw_data_path : str = os.path.join('artifact','data.csv')
+    train_data_path : str = os.path.join('artifacts','train.csv')
+    test_data_path : str = os.path.join('artifacts','test.csv')
+    raw_data_path : str = os.path.join('artifacts','data.csv')
 
 '''
 1. Takes Data from Source
@@ -59,4 +60,9 @@ if __name__=="__main__":
     train_data,test_data = obj.initiate_data_ingestion()
     
     data_transformation = DataTransformation()
-    data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr,test_arr,_= data_transformation.initiate_data_transformation(train_data,test_data)
+
+    modelTrainer = ModelTrainer()
+    r2_Score = modelTrainer.initiate_model_trainer(train_arr,test_arr)
+    print("Your Model R2 score :",r2_Score)
+
