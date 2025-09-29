@@ -28,35 +28,4 @@
 - Scalable and Maintainable Architecture
 
 ## ML Project Structure:
-.
-├── app.py
-├── requirements.txt
-├── setup.py
-├── src
-│   ├── components
-│   │   ├── data_ingestion.py
-│   │   ├── data_transformation.py
-│   │   ├── __init__.py
-│   │   ├── model_trainer.py
-│   ├── pipeline
-│   │   ├── __init__.py
-│   │   ├── predict_pipeline.py
-│   │   └── train_pipeline.py
-│   ├── exception.py
-│   ├── __init__.py
-│   ├── logger.py
-│   └── utils.py
-├── notebook
-│   ├── 1. EDA RETAIL SALES PREDICTION.ipynb
-│   ├── 2. MODEL TRAINING RETAIL SALES.ipynb
-│   ├── data
-│   │   └── retail_sales_data.csv
-├── artifacts
-│   ├── data.csv
-│   ├── model.pkl
-│   ├── preprocessor.pkl
-│   ├── test.csv
-│   └── train.csv
-├── logs
-│   ├── 10_03_2024_21_48_17.log
-│   │   └── 10_03_2024_21_48_17.log
+![alt text](static/structure.png)
